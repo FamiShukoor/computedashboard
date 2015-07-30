@@ -1,0 +1,27 @@
+<div class="container" ng-controller="InstanceListCtrl">
+<div class="page-header">
+<h3>List of EC2 Instances</h3>
+</div>
+<p class="lead">
+<table class="table table-striped">
+<tr>
+<th>ID</th>
+<th>Type</th>
+<th>State</th>
+<th>Public IP</th>
+<th>Private IP</th>
+<th>Availability Zone</th>
+<th>Image ID</th>
+</tr>
+<tr ng-repeat="instance in instances">
+<td>{{instance.instanceID}}</td>
+<td>{{instance.instanceType}}</td>
+<td>{{instance.state}}</td>
+<td>{{instance.publicIP}}</td>
+<td>{{instance.privateIP}}</td>
+<td>{{instance.availabilityZone}}</td>
+<td>{{instance.imageID}}</td>
+</tr>
+</table>
+</p>
+</div>

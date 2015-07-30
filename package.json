@@ -1,0 +1,30 @@
+{
+  "name": "computeDashboard",
+  "version": "0.0.1",
+  "description": "A custom dashboard showing all EC2 instances.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "jwt-simple": "^0.3.0",
+    "morgan": "^1.6.1",
+    "aws-sdk": ">= 2.0.9"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FamiShukoor/computedashboard"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Fami Shukoor",
+  "license": "MIT"
+}
