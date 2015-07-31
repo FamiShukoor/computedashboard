@@ -32,7 +32,7 @@ var auth = {
         var dbUserObj = { // spoofing a userobject from the DB. 
             name: 'admin',
             role: 'admin',
-            username: 'admin@cisco.com'
+            username: 'admin@xyz.com'
         };
     return dbUserObj;
     },
@@ -41,7 +41,7 @@ var auth = {
         var dbUserObj = { // spoofing a userobject from the DB. 
             name: 'admin',
             role: 'admin',
-            username: 'admin@cisco.com'
+            username: 'admin@xyz.com'
         };
         return dbUserObj;
     },

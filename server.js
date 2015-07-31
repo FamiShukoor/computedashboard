@@ -20,7 +20,7 @@ app.all('/*', function(req, res, next) {
     }
 });
 // Auth Middleware - This will check if the token is valid
-// Only the requests that start with /ciscodashboard/* will be checked for the token.
+// Only the requests that start with /computedashboard/* will be checked for the token.
 // Any URL's that do not follow the below pattern should be avoided unless you 
 // are sure that authentication is not needed
 app.all('/computedashboard/*', [require('./middlewares/validateRequest')]);
