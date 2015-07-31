@@ -1,4 +1,8 @@
 var jwt = require('jwt-simple');
+var bcrypt = require('bcryptjs');
+var usermodal = require('../modal/user');//dummy db data
+
+var hash = bcrypt.hashSync(usermodal.password);// hash needs to be updated in db while creating user
 var auth = {
     login: function(req, res) {
         var username = req.body.username || '';
@@ -7,7 +11,7 @@ var auth = {
             res.status(401);
             res.json({
             "status": 401,
-            "message": "Invalid credentials"
+            "message": 'Please enter credentials'
             });
             return;
         }
@@ -28,22 +32,15 @@ var auth = {
         }
     },
     validate: function(username, password) {
-    // spoofing the DB response for simplicity
-        var dbUserObj = { // spoofing a userobject from the DB. 
-            name: 'admin',
-            role: 'admin',
-            username: 'admin@xyz.com'
-        };
-    return dbUserObj;
+        var passStat = bcrypt.compareSync(password, hash); 
+        if(usermodal.username == username && passStat){
+            return usermodal;
+        }else{
+             return null;
+        }
     },
     validateUser: function(username) {
-        // spoofing the DB response for simplicity
-        var dbUserObj = { // spoofing a userobject from the DB. 
-            name: 'admin',
-            role: 'admin',
-            username: 'admin@xyz.com'
-        };
-        return dbUserObj;
+       return usermodal;
     },
 }
 // private method

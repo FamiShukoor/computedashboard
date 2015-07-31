@@ -19,7 +19,7 @@ ec2.describeInstances(function(err, result) {
             var privateIP = instances[j].PrivateIpAddress;
             var imageID = instances[j].ImageId;
             var az = instances[j].Placement.AvailabilityZone;
-            console.log('instanceID ' + instanceID + " state " + stateName + " public ip " + publicIP + 'private ip' + privateIP + 'image id ' + imageID+ 'Availability zone'+az);
+            //console.log('instanceID ' + instanceID + " state " + stateName + " public ip " + publicIP + 'private ip' + privateIP + 'image id ' + imageID+ 'Availability zone'+az);
             var obj = {instanceID: instanceID,instanceType: instanceType,state: stateName,publicIP: publicIP,privateIP: privateIP,imageID: imageID,availabilityZone:az};
             data.push(obj);
         }
@@ -27,7 +27,6 @@ ec2.describeInstances(function(err, result) {
 });
 var instancelist = {
     getAll: function(req, res) {
-        console.log("inside getall EC2 instances");
         var allInstances = data;
         res.json(allInstances);
     }

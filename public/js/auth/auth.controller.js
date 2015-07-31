@@ -1,8 +1,8 @@
 myApp.controller('LoginCtrl', ['$scope', '$window', '$location', 'UserAuthFactory', 'AuthenticationFactory',
 function($scope, $window, $location, UserAuthFactory, AuthenticationFactory) {
         $scope.user = {
-            username: 'admin@xyz.com',
-            password: 'pass123'
+            username: '',
+            password: ''
         };
         $scope.login = function() {
             var username = $scope.user.username,
@@ -17,7 +17,7 @@ function($scope, $window, $location, UserAuthFactory, AuthenticationFactory) {
                     $window.sessionStorage.userRole = data.user.role; // to fetch the user details on refresh
                     $location.path("/");
                 }).error(function(status) {
-                    alert('Oops something went wrong!');
+                    alert(status.message);
                 });
             } else {
                 alert('Invalid credentials');

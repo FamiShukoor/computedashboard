@@ -3,10 +3,12 @@ var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+//creates an express app
 var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+
 app.all('/*', function(req, res, next) {
     // CORS headers
     res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
@@ -19,11 +21,13 @@ app.all('/*', function(req, res, next) {
         next();
     }
 });
+
 // Auth Middleware - This will check if the token is valid
 // Only the requests that start with /computedashboard/* will be checked for the token.
 // Any URL's that do not follow the below pattern should be avoided unless you 
 // are sure that authentication is not needed
 app.all('/computedashboard/*', [require('./middlewares/validateRequest')]);
+
 app.use('/', require('./routes'));
 // If no route is matched by now, it must be a 404
 app.use(function(req, res, next) {
@@ -31,9 +35,11 @@ app.use(function(req, res, next) {
     err.status = 404;
     next(err);
 });
+
 app.get('/', function(req, res){
   res.redirect('/index.html');
 });
+
 // Start the server
 app.set('port', process.env.PORT || 9000);
 var server = app.listen(app.get('port'), function() {
