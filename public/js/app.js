@@ -1,4 +1,4 @@
-var myApp = angular.module('ciscodashboard', ['ngRoute']);
+var myApp = angular.module('ciscodashboard', ['ngRoute','ngTable']);
 myApp.config(function($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('TokenInterceptor');
     $routeProvider
@@ -10,7 +10,6 @@ myApp.config(function($routeProvider, $httpProvider) {
     }
     }).when('/', {
     templateUrl: 'partials/home.html',
-    controller: 'InstanceListCtrl',
     access: {
     requiredLogin: true
     }
