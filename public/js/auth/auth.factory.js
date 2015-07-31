@@ -15,7 +15,13 @@ myApp.factory('AuthenticationFactory', function($window) {
 myApp.factory('UserAuthFactory', function($window, $location, $http, AuthenticationFactory) {
     return {
         login: function(username, password) {
-            return $http.post('https://'+window.location.hostname+'/login', {
+            var locationport = location.port;
+            if(locationport){
+                var urlBase = 'http://'+window.location.hostname+':'+locationport+'/login';
+            }else{
+                var urlBase = 'https://'+window.location.hostname+'/login';  
+            }
+            return $http.post(urlBase, {
                 username: username,
                 password: password
             });
