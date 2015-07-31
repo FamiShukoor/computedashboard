@@ -1,4 +1,10 @@
-myApp.controller('LoginCtrl', ['$scope', '$window', '$location', 'UserAuthFactory', 'AuthenticationFactory',
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+//controller for login view
+dashboardApp.controller('LoginCtrl', ['$scope', '$window', '$location', 'UserAuthFactory', 'AuthenticationFactory',
 function($scope, $window, $location, UserAuthFactory, AuthenticationFactory) {
         $scope.user = {
             username: '',

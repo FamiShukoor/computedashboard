@@ -1,4 +1,9 @@
-myApp.factory('dataFactory', function($http) {
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+dashboardApp.factory('dataFactory', function($http) {
     
     var locationport = location.port;
     if(locationport){

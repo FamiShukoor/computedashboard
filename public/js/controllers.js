@@ -1,4 +1,10 @@
-myApp.controller("HeaderCtrl", ['$scope', '$location', 'UserAuthFactory',
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+/// controller for Header
+dashboardApp.controller("HeaderCtrl", ['$scope', '$location', 'UserAuthFactory',
 function($scope, $location, UserAuthFactory) {
     $scope.isActive = function(route) {
         return route === $location.path();
@@ -8,8 +14,8 @@ function($scope, $location, UserAuthFactory) {
     }
 }
 ]);
-/// snipp
-myApp.controller("InstanceListCtrl", ['$scope', 'dataFactory','ngTableParams','$filter',
+/// controller for InstanceList
+dashboardApp.controller("InstanceListCtrl", ['$scope', 'dataFactory','ngTableParams','$filter',
 function($scope, dataFactory,ngTableParams,$filter) {
    $scope.instances = [];
     // Access the factory and get the latest products list

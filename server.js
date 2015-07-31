@@ -1,3 +1,9 @@
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');

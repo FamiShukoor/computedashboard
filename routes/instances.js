@@ -1,5 +1,11 @@
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+
 var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./config/awsconfig.json');
+AWS.config.loadFromPath('./config/awsconfig.json');// load AWS key
 var ec2 = new AWS.EC2();
 var data = [];
 // returns all running ec2 instances and its details

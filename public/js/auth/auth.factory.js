@@ -1,4 +1,9 @@
-myApp.factory('AuthenticationFactory', function($window) {
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+dashboardApp.factory('AuthenticationFactory', function($window) {
     var auth = {
         isLogged: false,
         check: function() {
@@ -12,7 +17,7 @@ myApp.factory('AuthenticationFactory', function($window) {
     }
     return auth;
 });
-myApp.factory('UserAuthFactory', function($window, $location, $http, AuthenticationFactory) {
+dashboardApp.factory('UserAuthFactory', function($window, $location, $http, AuthenticationFactory) {
     return {
         login: function(username, password) {
             var locationport = location.port;
@@ -39,7 +44,7 @@ myApp.factory('UserAuthFactory', function($window, $location, $http, Authenticat
         }
     }
 });
-myApp.factory('TokenInterceptor', function($q, $window) {
+dashboardApp.factory('TokenInterceptor', function($q, $window) {
     return {
         request: function(config) {
             config.headers = config.headers || {};

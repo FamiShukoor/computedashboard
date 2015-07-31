@@ -1,5 +1,10 @@
-var myApp = angular.module('computedashboard', ['ngRoute','ngTable']);
-myApp.config(function($routeProvider, $httpProvider) {
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
+var dashboardApp = angular.module('computedashboard', ['ngRoute','ngTable']);
+dashboardApp.config(function($routeProvider, $httpProvider) {//routing to each view
     $httpProvider.interceptors.push('TokenInterceptor');
     $routeProvider
     .when('/login', {
@@ -17,7 +22,7 @@ myApp.config(function($routeProvider, $httpProvider) {
     redirectTo: '/login'
     });
 });
-myApp.run(function($rootScope, $window, $location, AuthenticationFactory) {
+dashboardApp.run(function($rootScope, $window, $location, AuthenticationFactory) {
     // when the page refreshes, check if the user is already logged in
     AuthenticationFactory.check();
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute) {

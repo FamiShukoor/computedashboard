@@ -1,5 +1,10 @@
+/* 
+Compute Dashboard
+Copyright (c) 2015 FamiShukoor
+Author: fshukoor@cisco.com    
+*/
 var jwt = require('jwt-simple');
-var bcrypt = require('bcryptjs');
+var bcrypt = require('bcryptjs');// to encrypt password
 var usermodal = require('../modal/user');//dummy db data
 
 var hash = bcrypt.hashSync(usermodal.password);// hash needs to be updated in db while creating user
