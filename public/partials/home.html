@@ -1,21 +1,16 @@
 <div class="container" ng-controller="InstanceListCtrl">
-<div class="page-header">
-<h3>List of EC2 Instances</h3>
-</div>
-<p class="lead">
-<table ng-table="tableParams" class="table table-striped">
-    <tr ng-repeat="instance in $data">
-        <td data-title="'ID'" sortable="'instanceID'">{{instance.instanceID}}</td>
-        <td data-title="'Type'" sortable="'instanceType'">{{instance.instanceType}}</td>
-        <td data-title="'State'" sortable="'state'">{{instance.state}}</td>
-        <td data-title="'Public IP'" sortable="'publicIP'">{{instance.publicIP}}</td>
-        <td data-title="'Private IP'" sortable="'privateIP'">{{instance.privateIP}}</td>
-        <td data-title="'Availability Zone'" sortable="'availabilityZone'">{{instance.availabilityZone}}</td>
-        <td data-title="'Image ID'" sortable="'imageID'">{{instance.imageID}}</td>
-    </tr>
-</table>
-    
-    
-    
-</p>
+    <div class="page-header">
+        <h3>List of EC2 Instances</h3>
+    </div>
+    <table ng-table="tableParams" class="table table-striped">
+        <tr ng-repeat="instance in $data">
+            <td data-title="'ID'" sortable="'instanceID'">{{instance.instanceID}}</td>
+            <td data-title="'Type'" sortable="'instanceType'">{{instance.instanceType}}</td>
+            <td data-title="'State'" sortable="'state'">{{instance.state}}</td>
+            <td data-title="'Public IP'" sortable="'publicIP'">{{instance.publicIP}}</td>
+            <td data-title="'Private IP'" sortable="'privateIP'">{{instance.privateIP}}</td>
+            <td data-title="'Availability Zone'" sortable="'availabilityZone'">{{instance.availabilityZone}}</td>
+            <td data-title="'Image ID'" sortable="'imageID'">{{instance.imageID}}</td>
+        </tr>
+    </table>
 </div>

@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+
 var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
@@ -34,7 +35,7 @@ app.get('/', function(req, res){
   res.redirect('/index.html');
 });
 // Start the server
-app.set('port', process.env.PORT || 8001);
+app.set('port', process.env.PORT || 9000);
 var server = app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + server.address().port);
 });
