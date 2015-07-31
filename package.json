@@ -1,7 +1,7 @@
 {
   "name": "computeDashboard",
   "version": "0.0.1",
-  "description": "A custom dashboard showing all EC2 instances.",
+  "description": "A custom dashboard showing all EC2 instances using Nodejs.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
