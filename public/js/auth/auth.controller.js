@@ -17,10 +17,11 @@ function($scope, $window, $location, UserAuthFactory, AuthenticationFactory) {
                     $window.sessionStorage.userRole = data.user.role; // to fetch the user details on refresh
                     $location.path("/");
                 }).error(function(status) {
-                    alert(status.message);
+                     $scope.message = status.message;
+                   
                 });
             } else {
-                alert('Invalid credentials');
+                 $scope.message = 'Invalid credentials';
             }
         };
     }
