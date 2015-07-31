@@ -11,6 +11,6 @@ router.post('/login', auth.login);
 /*
 * Routes that can be accessed only by autheticated users
 */
-router.get('/ciscodashboard/instances', instances.getAll);
+router.get('/computedashboard/instances', instances.getAll);
 
 module.exports = router;

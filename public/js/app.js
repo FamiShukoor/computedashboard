@@ -1,4 +1,4 @@
-var myApp = angular.module('ciscodashboard', ['ngRoute','ngTable']);
+var myApp = angular.module('computedashboard', ['ngRoute','ngTable']);
 myApp.config(function($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('TokenInterceptor');
     $routeProvider
